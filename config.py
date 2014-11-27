@@ -55,3 +55,4 @@ SEGMENTS = [
 
 # Change the colors used to draw individual segments in your prompt
 THEME = 'default'
+
