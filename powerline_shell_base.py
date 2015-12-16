@@ -6,8 +6,12 @@ import argparse
 import os
 import sys
 
+py3 = sys.version_info.major == 3
+
+
 def warn(msg):
     print('[powerline-bash] ', msg)
+
 
 class Powerline:
     symbols = {
@@ -67,8 +71,12 @@ class Powerline:
             separator_fg if separator_fg is not None else bg))
 
     def draw(self):
-        return (''.join(self.draw_segment(i) for i in range(len(self.segments)))
-                + self.reset).encode('utf-8') + ' '
+        text = (''.join(self.draw_segment(i) for i in range(len(self.segments)))
+                + self.reset) + ' '
+        if py3:
+            return text
+        else:
+            return text.encode('utf-8')
 
     def draw_segment(self, idx):
         segment = self.segments[idx]
@@ -121,6 +129,8 @@ if __name__ == "__main__":
             help='Deprecated. Use --cwd-mode=dironly')
     arg_parser.add_argument('--cwd-max-depth', action='store', type=int,
             default=5, help='Maximum number of directories to show in path')
+    arg_parser.add_argument('--cwd-max-dir-size', action='store', type=int,
+            help='Maximum number of letters displayed for each directory in the path')
     arg_parser.add_argument('--colorize-hostname', action='store_true',
             help='Colorize the hostname based on a hash of itself.')
     arg_parser.add_argument('--mode', action='store', default='patched',
