@@ -3,7 +3,7 @@ class DefaultColor:
     This class should have the default colors for every segment.
     Please test every new segment with this theme first.
     """
-    USERNAME_FG = 226
+    USERNAME_FG = 250
     USERNAME_BG = 240
     USERNAME_ROOT_BG = 124
 
