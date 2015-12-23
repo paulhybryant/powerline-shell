@@ -7,9 +7,6 @@
 # prompt. Any segment you add must be present in the segments/ directory
 
 SEGMENTS = [
-# Set the terminal window title to user@host:dir
-#    'set_term_title',
-
 # Show current virtual environment (see http://www.virtualenv.org/)
     'virtual_env',
 
@@ -48,11 +45,8 @@ SEGMENTS = [
 # Show number of running jobs
     'jobs',
 
-# Show the last command's exit code if it was non-zero
-    'exit_code',
-
-# Show a new line
-    'newline',
+# Show a vimode
+    'vimode',
 
 # Shows a '#' if the current user is root, '$' otherwise
 # Also, changes color if the last command exited with a non-zero error code
