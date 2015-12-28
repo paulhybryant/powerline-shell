@@ -151,6 +151,10 @@ scenario.
 Make sure you introduce new default colors in `themes/default.py` for every new
 segment you create. Test your segment with this theme first.
 
+You should add tests for your segment as best you are able. Unit and
+integration tests are both welcome. Run your tests with the `nosetests` command
+after install the requirements in `dev_requirements.txt`.
+
 ### Themes
 
 The `themes` directory stores themes for your prompt, which are basically color
@@ -166,6 +170,17 @@ a theme, please test your theme on multiple terminals, especially with default
 settings.
 
 # Changes
+
+2015-12-26
+
+* Beginnings of unit testing for segments. Included in this change was a
+  refactor of the way segments are added to powerline. Now, instead of looking
+  for a global `powerline` object, `powerline` is passed into the function to
+  add the segment. Segments will also no longer add the segments by calling the
+  `add` function themselves.
+  ([@b-ryan](https://github.com/milkbikis/powerline-shell/pull/212))
+* Python3 fixes for `lib/color_compliment.py`.
+  ([@ceholden](https://github.com/milkbikis/powerline-shell/pull/220))
 
 2015-11-25
 
