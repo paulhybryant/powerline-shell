@@ -10,7 +10,7 @@ py3 = sys.version_info.major == 3
 
 
 def warn(msg):
-    print('[powerline-bash] ', msg)
+    print('[powerline-shell] ', msg)
 
 
 class Powerline:
