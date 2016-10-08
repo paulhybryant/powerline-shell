@@ -46,7 +46,7 @@ SEGMENTS = [
     'jobs',
 
 # Show a vimode
-    'vimode',
+#   'vimode',
 
 # Shows a '#' if the current user is root, '$' otherwise
 # Also, changes color if the last command exited with a non-zero error code
